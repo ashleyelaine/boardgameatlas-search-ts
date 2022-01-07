@@ -32,18 +32,23 @@ export default function App() {
     input.value = '';
   };
 
+  const resetSearch = () => {
+    setBoardGameSearch('');
+  }
+
   return (
     <React.Fragment>
       <CssBaseline />
-      <div className="App">
+      <div className="main">
         <h1>Board Game Search App</h1>
-        <Button variant="contained">Hello World</Button>
         <form className="searchForm" onSubmit={event => search(event)} >
           <input id="searchText" type="text" />
-          <button>Search</button>
+          <Button variant="contained">Search</Button>
         </form>
-        {boardGameSearch && <p>Results for {boardGameSearch}...</p>}
-        <div className="boardgame-container">
+        {/* <Button variant="outlined" onClick={resetSearch}>Reset</Button> */}
+
+        {boardGameSearch && <p className="results-for-text">Results for <i>{boardGameSearch}:</i></p>}
+        <div className="boardgames">
           {boardGamesFound &&
             boardGamesFound.map(boardgame => (<BoardGame key={boardgame.name} boardgame={boardgame}></BoardGame>))
           }
