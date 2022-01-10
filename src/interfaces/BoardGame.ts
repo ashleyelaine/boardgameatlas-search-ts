@@ -1,4 +1,5 @@
 export interface IBoardGame {
+  id: number;
   official_url: string;
   description: string;
   image_url: string;

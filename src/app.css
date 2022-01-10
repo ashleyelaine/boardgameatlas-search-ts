@@ -27,7 +27,6 @@ h1 {
 
 h2 {
   color: #222;
-  margin-bottom: 20px;
   font-size: 1.7rem;
 }
 
@@ -42,8 +41,12 @@ a {
 }
 
 .search-form {
-  width: 80%;
-  margin: 40px auto;
+  margin-right: 30px;
+  display: flex;
+}
+
+.search-text {
+  margin: 0 15px 0 0;
 }
 
 input {
@@ -69,19 +72,28 @@ button,
   text-decoration: none;
 }
 
+.reset-btn {
+  margin-left: 10px;
+}
+
 .boardgames {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .boardgame {
-  width: calc(33.3333% - 20px);
-  margin-right: 20px;
-  margin-bottom: 20px;
+  width: calc(33.3333% - 30px);
+  margin-right: 30px;
+  margin-bottom: 30px;
   background: #fff;
-  border-radius: 10px;
-  padding: 20px 0;
+  border-radius: 4px;
+  border: 1px solid #4e5766;
+  padding: 25px;
+}
+
+.boardgame .title {
+  margin-bottom: 10px;
 }
 
 .results-for-text {
@@ -107,4 +119,67 @@ details {
 summary {
   padding-bottom: 5px;
   font-weight: bold;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 5px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #1976d2;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
 }
