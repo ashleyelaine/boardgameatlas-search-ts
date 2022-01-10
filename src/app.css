@@ -46,7 +46,19 @@ a {
 }
 
 .search-text {
-  margin: 0 15px 0 0;
+  width: 100%;
+  background: #fff;
+}
+
+.search-text > div {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-btn {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 input {

@@ -1,6 +1,6 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Button, FormHelperText } from '@mui/material';
+import { Button, FormHelperText, TextField } from '@mui/material';
 import { IBoardGame } from '../interfaces/BoardGame';
 import api from '../utils/api';
 import Loader from '../components/Loader';
@@ -15,7 +15,7 @@ const SearchPage = () => {
 
   const fetchBoardGames = async (searchTerm: String) => {
     setLoading(true);
-    let data = await api.get(`search?&order_by=rank&ascending=false`, {
+    let data = await api.get(`search?&order_by=rank&ascending=false&limit=12`, {
       params: { 
         name : searchTerm
       }
@@ -55,8 +55,8 @@ const SearchPage = () => {
       <div className="main">
         <h1>Board Game Search App</h1>
         <form className="search-form" onSubmit={event => search(event)} >
-          <input className="search-text" id="searchText" type="search" />
-          <Button type="submit" variant="contained">Search</Button>&nbsp;
+          <TextField label="Search for board game" variant="outlined" className="search-text" id="searchText" type="search" />
+          <Button className="search-btn" type="submit" variant="contained">Search</Button>&nbsp;
           <Button variant="outlined" onClick={event => resetSearch(event)}>Reset</Button>
         </form>
         {error && (
@@ -70,8 +70,12 @@ const SearchPage = () => {
             <div></div>
           </div>
         </Loader>
-        {searchTerm && <p className="results-for-text">Results for: <i>{searchTerm}</i></p>}
-        <BoardGameList boardgames={boardgames} />
+        {!loading && searchTerm && (
+          <p className="results-for-text">Results for: <i>{searchTerm}</i></p>
+        )}
+        {!loading && (
+          <BoardGameList boardgames={boardgames} />
+        )}
       </div>
     </React.Fragment>
   );
