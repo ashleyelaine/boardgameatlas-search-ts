@@ -34,6 +34,14 @@ a {
   color: #3260a8;
 }
 
+img {
+  max-width: 100%;
+}
+
+td {
+  line-height: 1.3em !important;
+}
+
 .main {
   text-align: center;
   width: 80%;

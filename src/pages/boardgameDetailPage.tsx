@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CssBaseline from '@mui/material/CssBaseline';
 import { Link, useParams } from "react-router-dom";
-import { FormHelperText } from '@mui/material';
+import { FormHelperText, Button, Box } from '@mui/material';
 import api from '../utils/api';
 import BoardGameDetail from "../components/BoardGameDetail";
 import Loader from "../components/Loader";
@@ -39,7 +39,9 @@ const BoardgameDetailPage = () => {
     <React.Fragment>
       <CssBaseline />
       <div className="main">
-      <Link to={`/`}>Go back to search books</Link>
+      <Box textAlign="left" sx={{ flexGrow: 1, mt: 2 }}>
+        <Button component={Link} to={'/' } size="small">&laquo;&nbsp;Back to Boardgame Search</Button>
+      </Box>
       {error && (
         <FormHelperText>Some error occurred, while fetching board games API</FormHelperText>
       )}
