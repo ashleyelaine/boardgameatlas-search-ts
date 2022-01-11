@@ -9,11 +9,11 @@ A React+Typescript app that allows a user to enter a search term then makes an A
 
 ## Requirements
 
-- Typescript
-- Node
-- React
-- Material UI
-- Reate Router
+- [Typescript](https://www.typescriptlang.org/)
+- [Node](https://nodejs.org/en/)
+- [React](https://reactjs.org/)
+- [Material UI](https://mui.com/)
+- [React Router](https://reactrouter.com/)
 
 ## Setup
 
