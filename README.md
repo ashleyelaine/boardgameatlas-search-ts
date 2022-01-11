@@ -18,4 +18,4 @@ A React+Typescript app that allows a user to enter a search term then makes an A
 ## Setup
 
 1. Download code or copy repo
-2. Run `npm start` in the root folder
+2. Run `npm install` then `npm start` in the root folder
